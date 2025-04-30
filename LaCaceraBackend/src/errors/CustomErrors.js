@@ -5,5 +5,5 @@ export class CustomError extends Error {
         this.details = details;
 
 
-    }
-}
+    };
+};
