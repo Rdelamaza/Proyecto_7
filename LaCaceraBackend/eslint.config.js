@@ -23,7 +23,7 @@ export default [
             'no-undef':'error',
             semi:['error', 'always'],
             quotes:['error', 'single'],
-            'no-console':'warn',
+            'no-console':'off',
             
 
             }
