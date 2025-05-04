@@ -1,13 +1,13 @@
-import { Products } from "../model/Products.model.js";
-import {ProductsError} from "./../errors/TypeError.js"
-import { notFoundData } from "../utils/validate.js";
+import { Products } from '../model/Products.model.js';
+import {ProductsError} from './../errors/TypeError.js';
+import { notFoundData } from '../utils/validate.js';
 
 
 //Get all products
 
 export const getAllProductsService = async () =>{
     try {
-        const products = await Products.find();
+        const products = await Products.find( {isActive:true} );
 
         notFoundData(products, 'Products not found', 'No products found in the database');
 
@@ -39,6 +39,7 @@ export const getProductByIdService = async (id) => {
 export const createProductService =async (dataProduct) => {
     try {
         const product = await Products.create(dataProduct);
+        
         return product;
     } catch (error) {
         throw new ProductsError('Error creating product', error);
@@ -68,6 +69,7 @@ export const deleteProductByIdService = async (id) => {
     try {
         const product = await Products.findByIdAndDelete(id);
         notFoundData(product, 'Product not found', `Product with id: ${id} not found`);
+
         return product;
     } catch (error) {
         throw new ProductsError(`Error deleting product id: ${id}`, 500, error);
@@ -78,8 +80,9 @@ export const deleteProductByIdService = async (id) => {
 //Soft delete product
 export const softDeleteProductByIdService =async (id) => {
     try {
-        const product =await Products.findByIdAndUpdate(id, {isActive: false});
+        const product = await Products.findByIdAndUpdate(id, {isActive: false});
         notFoundData(product, 'Product not found', `Product with id: ${id} not found`);
+
         return product;
         
     } catch (error) {

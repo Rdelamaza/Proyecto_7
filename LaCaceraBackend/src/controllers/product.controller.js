@@ -1,8 +1,8 @@
 import { response } from '../utils/Templates/response.template.js';
 import { createProductService, deleteProductByIdService, getAllProductsService,
-        getProductByIdService,
-        softDeleteProductByIdService,
-        updateProductByIdService } from '../services/product.service.js';
+    getProductByIdService,
+    softDeleteProductByIdService,
+    updateProductByIdService } from '../services/product.service.js';
 
 //Get all products
 export const getAllProducts = async (req,res, next) => {
@@ -84,4 +84,4 @@ export const softDeleteProductById = async (req, res, next)=> {
     } catch (error) {
         next (error);
     }
-}
+};

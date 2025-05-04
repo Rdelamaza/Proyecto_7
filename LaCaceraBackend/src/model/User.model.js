@@ -24,7 +24,7 @@ const usersSchema = new Schema(
                 delete ret.__v;
                 delete ret.createdAt;
                 delete ret.updatedAt;
-                delete ret.isActive;
+                //delete ret.isActive;//
                 delete ret.isAdmin;
                 return ret;
             }

@@ -16,8 +16,8 @@ export const notFoundData =(data, message,details) => {
 
 export const notActiveData = (data, message, details) => {
     if(!data) throw new NotFoundError(
-        message || 'No se encontraron datos',
-        details || 'No se encontraron datos en la base de datos'
+        message || 'No se encontraron datos ativos',
+        details || 'No se encontraron datos activos en la base de datos'
     );
 
 };

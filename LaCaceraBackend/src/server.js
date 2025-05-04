@@ -11,7 +11,7 @@ dotenv.config();
 
 const app = express ();
 
-dbConnect();
+dbConnect(); //updateDocs para actualizar los documentos de la base de datos
 
 //Middleware de Cors
 
