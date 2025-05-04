@@ -16,7 +16,7 @@ export const getAllDeletedProducts = async (req, res, next) => {
     };
 
 };
-// GET PRODUCTO BY ID, CONTROLADOR PARA OBTENER UN PRODUCTO POR ID
+
 export const getDeletedProductById = async (req, res, next) => {
     try {
         const { id } = req.params;

@@ -5,6 +5,7 @@ import {getAllProducts,
     deleteProduct,
     softDeleteProductById,
     updateProductById} from '../controllers/product.controller.js';
+import { getAllDeletedProducts, getDeletedProductById, restoreProductById } from '../controllers/admin/products.admin.controller.js';
 
 const router = Router();
 
@@ -13,15 +14,14 @@ router.get('/products', getAllProducts);
 router.get('/products/:id', getProductsById);
 router.post('/products', createProduct);
 router.put('/products/update/:id', updateProductById);
-
 router.delete('/products/:id',softDeleteProductById);
 
-router.delete('/products/perma/:id', deleteProduct);
 
-
-
-
-
+//Admin Routes
+router.delete('/admin/perma/:id', deleteProduct);
+router.get('/admin/deleted', getAllDeletedProducts);
+router.get('/admin/deleted/:id', getDeletedProductById);
+router.patch('/admin/restore/:id', restoreProductById);
 
 
 
