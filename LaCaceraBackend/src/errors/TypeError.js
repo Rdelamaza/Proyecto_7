@@ -23,4 +23,10 @@ export class InternalServerError extends CustomError {
     constructor(message,statusCode, details) {
         super(message || 'Internal server error', statusCode || 500, details);
     }
-};
+}
+
+export class ProductsError extends CustomError {
+    constructor(message, details) {
+        super(message || 'Error en el producto', 400, details);
+    };
+}

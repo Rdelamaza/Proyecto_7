@@ -4,6 +4,7 @@ import dotenv from'dotenv';
 import {envs} from './config/envs.config.js';
 import { dbConnect } from './config/db.config.js';
 import productsRouter from './routers/products.routes.js';
+import { errorHandler } from './middlewares/errorHandler.js';
 
 
 dotenv.config();
@@ -23,6 +24,8 @@ app.use (express.urlencoded({ extended: true }));
 app.use('/api/v1', productsRouter);
 
 //Middleware de errores
+app.use(errorHandler);
+
 
 app.listen(envs.port, () =>{
     console.log(`Server running on port ${envs.port}`);
