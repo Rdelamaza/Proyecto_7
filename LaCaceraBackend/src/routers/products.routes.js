@@ -3,8 +3,8 @@ import {getAllProducts,
         getProductsById,
         createProduct, 
         deleteProduct,
-        updateProduct,
-        softDeleteProductById} from '../controllers/product.controller.js';
+        softDeleteProductById,
+        updateProductById} from '../controllers/product.controller.js';
 
 const router = Router();
 
@@ -12,7 +12,7 @@ const router = Router();
 router.get('/products', getAllProducts);
 router.get('/products/:id', getProductsById);
 router.post('/products', createProduct);
-router.put('/update/:id', updateProduct);
+router.put('/products/update/:id', updateProductById);
 
 router.delete('/products/:id',softDeleteProductById);
 

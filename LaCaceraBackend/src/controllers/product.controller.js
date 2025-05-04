@@ -2,7 +2,7 @@ import { response } from '../utils/Templates/response.template.js';
 import { createProductService, deleteProductByIdService, getAllProductsService,
         getProductByIdService,
         softDeleteProductByIdService,
-        updateProductByIdService, } from '../services/product.service.js';
+        updateProductByIdService } from '../services/product.service.js';
 
 //Get all products
 export const getAllProducts = async (req,res, next) => {
@@ -46,7 +46,7 @@ export const createProduct = async (req,res,next) => {
 
 //Update product
 
-export const updateProduct = async (req, res, next) => {
+export const updateProductById = async (req, res, next) => {
     try {
         const {id} = req.params;
         const dataProduct = req.body;
