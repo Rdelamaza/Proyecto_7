@@ -7,4 +7,9 @@ export const envs ={
     db:{
         uri: process.env.MONGO_URI,
     },
+    autentication :{
+        saltRounds: process.env.SALT_ROUNDS || 10,
+        secretKey: process.env.SECRET_KEY,
+        jwtExpire: process.env.JWT_EXPIRE,
+    },
 };
