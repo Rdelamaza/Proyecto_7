@@ -1,8 +1,8 @@
 import { response } from '../../utils/templates/response.template.js';
 import {getAllDeletedProductsService,
-        getDeletedProductByIdService, 
-        restoreProductByIdService
-        } from '../../services/admin/products.admin.service.js';
+    getDeletedProductByIdService, 
+    restoreProductByIdService
+} from '../../services/admin/products.admin.service.js';
 
 
 export const getAllDeletedProducts = async (req, res, next) => {

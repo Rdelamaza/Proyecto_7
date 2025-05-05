@@ -1,7 +1,8 @@
-import { UserError } from "../errors/TypeError"
-import { Users } from "../model/User.model";
-import { formatUserData } from "../utils/format.user.create";
-import { notFoundData } from "../utils/validate";
+import { UserError } from '../errors/TypeError.js';
+import { Users } from '../model/User.model.js';
+import { formatUserData } from '../utils/format.user.create.js';
+import { notFoundData } from '../utils/validate.js';
+import { hashPassword, comparePassword } from '../utils/hashPassword.js';
 
 
 // REGISTER USER
@@ -13,10 +14,9 @@ export const registerUserService = async ({
     phone_number,
     birth_date,
     isAdmin = false,
-
 }) => {
     try {
-        const hashedPassword = await hashedPassword(password);
+        const hashedPassword = await hashPassword(password);
         const userData = formatUserData(hashedPassword,
             first_name,
             last_name,
@@ -25,13 +25,14 @@ export const registerUserService = async ({
             birth_date,
             isAdmin);
 
-            console.log(userData);
+        console.log(userData);
 
-            const user = await Users.create(userData);
-            return user;
+        const user = await Users.create(userData);
+            
+        return user;
             
         
-        } catch (error) {
+    } catch (error) {
         throw new UserError('Error al registrar el usuario', 401, error);
     }
 };

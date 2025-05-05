@@ -1,15 +1,15 @@
 import bcrypt from 'bcrypt';
-import { envs } from '../config/envs.config';
-import { UserError } from '../errors/TypeError';
+import { envs } from '../config/envs.config.js';
+import { UserError } from '../errors/TypeError.js';
 
 const { saltRounds } = envs.autentication;
 
 export const hashPassword = async (password) => {
     try {
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        const hashedPassword = await bcrypt.hash(password, Number(saltRounds));
         return hashedPassword;
     } catch (error) {
-        throw new UserError(" Error al hashear la contraseña", 500, error);
+        throw new UserError(' Error al hashear la contraseña', 500, error);
     }
 };
 

@@ -3,7 +3,7 @@ import dotenv from'dotenv';
 
 import {envs} from './config/envs.config.js';
 import { dbConnect } from './config/db.config.js';
-import productsRouter from './routers/products.routes.js';
+import apiRouter from './routers/index.router.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 
 
@@ -21,7 +21,7 @@ app.use (express.json());
 app.use (express.urlencoded({ extended: true }));
 
 //Middleware de rutas
-app.use('/api/v1', productsRouter);
+app.use('/api/v1', apiRouter);
 
 //Middleware de errores
 app.use(errorHandler);

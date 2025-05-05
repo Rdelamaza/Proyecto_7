@@ -34,7 +34,7 @@ export class ProductsError extends CustomError {
 //User Error
 
 export class UserError extends CustomError {
-    constructor(message, details) {
+    constructor(message, statusCode, details) {
         super(message || 'Error en el usuario', statusCode, 401, details);
     }
 };
