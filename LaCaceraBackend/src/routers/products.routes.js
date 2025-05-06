@@ -9,11 +9,12 @@ import {getAllDeletedProducts,
     getDeletedProductById,
     restoreProductById } from '../controllers/admin/products.admin.controller.js';
 import { authenticationMiddleware} from '../middlewares/user.middleware.js';   
+import { verfyAdmin } from '../middlewares/verifyAdmin.middleware.js';
 
 const router = Router();
 
 //Products routes
-router.get('/', authenticationMiddleware, getAllProducts);
+router.get('/', authenticationMiddleware, verfyAdmin, getAllProducts);
 router.get('/:id', getProductsById);
 router.post('/', createProduct);
 router.put('/update/:id', updateProductById);
