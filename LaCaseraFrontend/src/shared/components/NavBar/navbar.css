@@ -4,6 +4,7 @@
 .custom-navbar {
     background-color: #f8f9fa; /* Color de fondo del navbar */
     padding: 0.5rem 1rem;
+    width: 100%;
 }
   /* Texto más intenso (negrita) para todos los elementos */
 .custom-navbar .navbar-brand,

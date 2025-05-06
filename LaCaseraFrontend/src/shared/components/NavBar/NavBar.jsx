@@ -1,5 +1,4 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -25,7 +24,7 @@ export const NavBar =() => {
                     navbarScroll>
 
                     <NavDropdown title="Mesa y Cocina" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Menaje</NavDropdown.Item>
+                    <NavDropdown.Item href="/menaje">Menaje</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
                         Manteleria
                     </NavDropdown.Item>
@@ -40,7 +39,6 @@ export const NavBar =() => {
                     <NavDropdown.Item href="#action4">
                         Dormitorio
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
                         Terraza
                     </NavDropdown.Item>
@@ -54,7 +52,7 @@ export const NavBar =() => {
                     <NavDropdown.Item href="#action4">
                         Deco2
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
+
                     <NavDropdown.Item href="#action5">
                         Deco3
                     </NavDropdown.Item>
@@ -64,13 +62,6 @@ export const NavBar =() => {
                 </Nav>
 
             <Form className="d-flex">
-                <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                />
-                <Button variant="outline-success">Busqueda</Button>
             </Form>
             </Navbar.Collapse>
         </Container>

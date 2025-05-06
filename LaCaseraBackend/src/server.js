@@ -5,6 +5,7 @@ import {envs} from './config/envs.config.js';
 import { dbConnect } from './config/db.config.js';
 import apiRouter from './routers/index.router.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+import cors from 'cors';
 
 
 dotenv.config();
@@ -14,6 +15,7 @@ const app = express ();
 dbConnect(); //updateDocs para actualizar los documentos de la base de datos
 
 //Middleware de Cors
+app.use(cors());
 
 //Middleware para parsear el body a JSON
 

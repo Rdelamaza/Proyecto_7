@@ -14,7 +14,7 @@ import { verfyAdmin } from '../middlewares/verifyAdmin.middleware.js';
 const router = Router();
 
 //Products routes
-router.get('/', authenticationMiddleware, getAllProducts);
+router.get('/', getAllProducts);
 router.get('/:id', getProductsById);
 router.post('/', createProduct);
 router.put('/update/:id', updateProductById);
