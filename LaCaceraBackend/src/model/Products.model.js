@@ -15,7 +15,7 @@ const productSchema = new Schema({
             delete ret.__v;
             delete ret.createdAt;
             delete ret.updatedAt;
-            // delete ret.isActive;//
+            delete ret.isActive;
             return ret;
         }
     }

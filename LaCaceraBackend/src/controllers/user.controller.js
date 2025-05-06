@@ -1,5 +1,5 @@
 import { response } from '../utils/Templates/response.template.js';
-import { getAllUsersService, registerUserService } from '../services/user.service.js';
+import { getAllUsersService, loginUserService, permaDeleteUserByEmailService, registerUserService, updateUserByEmailService } from '../services/user.service.js';
 
 //Regiter user 
 export const registerUser = async (req, res, next) => {
@@ -24,6 +24,53 @@ export const getAllUsers = async (req,res, next)=> {
     } catch (error) {
         next(error);
         
+    }
+};
+
+// Update user
+
+export const updateUserByEmail = async (req,res, next) => {
+    try {
+        const {email} = req.params;
+        const userData = req.body;
+
+        const [oldUser, updatedUser] = await updateUserByEmailService(email, userData);
+        
+        const custom = {
+            oldData : oldUser,
+        };
+
+        response (res, updatedUser,200, 'Usuario actualizado correctamente', custom);
+    } catch (error) {
+        next(error);
+    }
+};
+
+//Delete user
+
+export const deleteUser =async (req, res, next) => {
+    try {
+        const {email} = req.params;
+        const user = await permaDeleteUserByEmailService(email);
+        response(res, user, 200, 'Usuario eliminado correctamente');
+
+    } catch (error) {
+        next (error);
+        
+    }
+};
+
+// Login user
+
+export const login = async (req, res, next) => {
+    try {
+        const [user, token] = await loginUserService(req.body);
+        const custom ={
+            token
+        };
+        response(res, user, 200, 'Usuario logueado correctamente', custom)
+    } catch (error) {
+        next(error);
     }
 };
 

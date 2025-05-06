@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import { envs } from '../config/envs.config.js';
 import { UserError } from '../errors/TypeError.js';
 
-const { saltRounds } = envs.autentication;
+const { saltRounds } = envs.authentication;
 
 export const hashPassword = async (password) => {
     try {
