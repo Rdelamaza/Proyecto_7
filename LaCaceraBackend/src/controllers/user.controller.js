@@ -68,7 +68,7 @@ export const login = async (req, res, next) => {
         const custom ={
             token
         };
-        response(res, user, 200, 'Usuario logueado correctamente', custom)
+        response(res, user, 200, 'Usuario logueado correctamente', custom);
     } catch (error) {
         next(error);
     }
