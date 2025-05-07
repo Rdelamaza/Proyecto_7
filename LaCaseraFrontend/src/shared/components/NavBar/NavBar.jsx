@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import{ Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
 
@@ -23,7 +24,7 @@ export const NavBar =() => {
         <>
         <Navbar expand="lg" className="custom-navbar">
             <Container fluid>
-                <Navbar.Brand href="/">La Casera</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">La Casera</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -32,41 +33,39 @@ export const NavBar =() => {
                     navbarScroll>
 
                     <NavDropdown title="Mesa y Cocina" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="/menaje">Menaje</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                        Manteleria
-                    </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/menaje">Menaje</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="#action4">Manteleria</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item as={Link} to="#action5">
                         Quincho
                     </NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Hogar" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Baño</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
+                    <NavDropdown.Item as={Link} to="#action3">Baño</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="#action4">
                         Dormitorio
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item as={Link} to="#action5">
                         Terraza
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action6">
+                    <NavDropdown.Item as={Link} to="#action6">
                         Entrada
                     </NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Decoración" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Deco1</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
+                    <NavDropdown.Item as={Link} to="#action3">Deco1</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="#action4">
                         Deco2
                     </NavDropdown.Item>
 
-                    <NavDropdown.Item href="#action5">
+                    <NavDropdown.Item as={Link} to="#action5">
                         Deco3
                     </NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="/contact">Contacto</Nav.Link>
-                    <Nav.Link href="/about">About</Nav.Link>
+                    <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
+                    <Nav.Link as={Link} to="/about">About</Nav.Link>
                 </Nav>
 
             <Form className="d-flex">
@@ -75,11 +74,11 @@ export const NavBar =() => {
             <div>
                 {
                     !user ? (
-                        <Nav.Link href="/login">Iniciar Sesión</Nav.Link>
+                        <Nav.Link as={Link} to="/login">Iniciar Sesión</Nav.Link>
                     ) : (
                         <div className="navbar-user-info">
                             <span>{user.first_name} {user.last_name} </span>
-                            <Nav.Link href="/" onClick={handleLogout}> Logout </Nav.Link>
+                            <Nav.Link as={Link} to= "/" onClick={handleLogout}> Logout </Nav.Link>
                         </div>
                         
 
