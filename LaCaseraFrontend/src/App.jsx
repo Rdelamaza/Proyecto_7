@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Footer from './components/footer/Footer';
+import Footer from './shared/components/footer/Footer';
 import WhatsAppButton from './shared/components/buttons/WhatsAppButton/WhatsAppButton';
 import { AppRouter } from './router/AppRouter/AppRouter';
 

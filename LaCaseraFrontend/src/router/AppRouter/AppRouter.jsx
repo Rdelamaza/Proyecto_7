@@ -4,6 +4,7 @@ import  AboutPage  from '../../shared/pages/about/AboutPage';
 import  NavBar  from '../../shared/components/navbar/NavBar';
 import ContactPage from '../../shared/pages/contact/ContactPage';
 import MenajePage from '../../modules/products/pages/MenajePage';
+import { LoginPage } from '../../modules/auth/pages/LoginPage/Login';
 
 export const AppRouter = () => {
     return (
@@ -14,6 +15,22 @@ export const AppRouter = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage/>}/>
             <Route path="/menaje" element={<MenajePage/>}/>
+            <Route path="/login" element={<LoginPage/>} />
+            {/*
+
+            <Route path="/manteleria" element={<ManteleriaPage/>}/>
+            <Route path="/quincho" element={<QuinchoPage/>}/>
+            <Route path="/bano" element={<BanoPage/>}/>
+            <Route path="/dormitorio" element={<DormitorioPage/>}/>
+            <Route path="/terraza" element={<TerrazaPage/>}/>
+            <Route path="/entrada" element={<EntradaPage/>}/>
+            <Route path="/deco1" element={<Deco1Page/>}/>
+            <Route path="/deco2" element={<Deco2Page/>}/>
+            <Route path="/deco3" element={<Deco3Page/>}/>
+            
+            
+            */}
+
         </Routes>
 
 

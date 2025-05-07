@@ -48,11 +48,12 @@ export const Contacto = () => {
 
                 <Card>
                     <Card.Body>
-                    <Card.Title>Card title</Card.Title>
+                    <Card.Title>Contacto</Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in
-                        to additional content. This card has even longer content than the
-                        first to show that equal height action.
+                        <>
+                        <p><strong>Teléfono:</strong> +56987654321</p>
+                        <p><strong>Correo:</strong> lacasera@gmail.com</p>
+                        </>
                     </Card.Text>
                     </Card.Body>
                     <Card.Footer>

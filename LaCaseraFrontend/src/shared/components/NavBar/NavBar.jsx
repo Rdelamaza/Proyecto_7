@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
+
 
 
 import "./navbar.css";
@@ -64,6 +66,10 @@ export const NavBar =() => {
             <Form className="d-flex">
             </Form>
             </Navbar.Collapse>
+            <Nav.Link href="/login">Iniciar Sesión</Nav.Link>
+            <Nav.Link href="#accionregister">Registrate</Nav.Link>
+            
+            
         </Container>
         </Navbar>
 

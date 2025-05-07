@@ -13,13 +13,13 @@ export const Footer =()=>{
 
                 <div className="row">
         
-                    <div className="col-md-3 mb-4">
+                    <div className="col-md-4 mb-4">
                         <h5>La Cacera</h5>
                         <p>Menaje y decoracion</p>
                     </div>
         
 
-                    <div className="col-md-3 mb-4">
+                    <div className="col-md-4 mb-4">
                         <h5>Enlaces rápidos</h5>
                         <ul className="list-unstyled">
                             <li><a href="#inicio" className="text-black">Inicio</a></li>
@@ -29,7 +29,7 @@ export const Footer =()=>{
                         </ul>
                     </div>
 
-                    <div className="col-md-3 mb-4">
+                    <div className="col-md-4 mb-4">
                         <h5>Síguenos</h5>
                         <ul className="list-unstyled d-flex justify-content-center">
                             <li className="me-3"><a href="#" className="text-black"><i className="bi bi-facebook"></i></a></li>
@@ -37,15 +37,6 @@ export const Footer =()=>{
                             <li className="me-3"><a href="#" className="text-black"><i className="bi bi-twitter"></i></a></li>
                         </ul>
                     </div>
-        
-
-                    <div className="col-md-3 mb-4">
-                        <h5>Contacto</h5>
-                        <p><strong>Teléfono:</strong> +56987654321</p>
-                        <p><strong>Correo:</strong> lacasera@gmail.com</p>
-                        <p><strong>Dirección:</strong> Av. del Mar 1045, Maitencillo.</p>
-                    </div>
-        
                 </div>
                 
 
