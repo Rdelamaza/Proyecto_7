@@ -10,13 +10,14 @@ import {getAllDeletedProducts,
     restoreProductById } from '../controllers/admin/products.admin.controller.js';
 import { authenticationMiddleware} from '../middlewares/user.middleware.js';   
 import { verfyAdmin } from '../middlewares/verifyAdmin.middleware.js';
+import { uploadPhoto } from '../middlewares/uploadFile.middleware.js';//middleware para cargar imagenes al servidor
 
 const router = Router();
 
 //Products routes
 router.get('/', getAllProducts);
 router.get('/:id', getProductsById);
-router.post('/', createProduct);
+router.post('/', uploadPhoto('products','file'), createProduct);
 router.put('/update/:id', updateProductById);
 router.delete('/:id',softDeleteProductById);
 

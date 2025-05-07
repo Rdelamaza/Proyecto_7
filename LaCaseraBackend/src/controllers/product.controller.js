@@ -3,6 +3,7 @@ import { createProductService, deleteProductByIdService, getAllProductsService,
     getProductByIdService,
     softDeleteProductByIdService,
     updateProductByIdService } from '../services/product.service.js';
+import { buildFileUrl } from '../utils/files/buildFileUrl.js';
 
 //Get all products
 export const getAllProducts = async (req,res, next) => {
@@ -33,7 +34,14 @@ export const getProductsById = async (req, res ,next) =>{
 // Create product
 export const createProduct = async (req,res,next) => {
     try {
-        const dataProduct = req.body;
+        let imageUrl = '';
+        if(req.file) imageUrl = buildFileUrl(req, req.file.filename,'products');
+
+
+        const dataProduct = {
+            ...req.body,
+            image: imageUrl
+        };
         const product = await createProductService(dataProduct);
         response(res, product, 201, 'Product created');
 

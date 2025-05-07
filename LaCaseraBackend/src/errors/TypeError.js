@@ -38,3 +38,11 @@ export class UserError extends CustomError {
         super(message || 'Error en el usuario', statusCode, 401, details);
     }
 };
+
+// File Error
+
+export class FileServiceError extends CustomError {
+    constructor(message, statusCode, details){
+        super(message ||'Error en el servicio de archivos', statusCode|| 500, details); 
+    }
+};

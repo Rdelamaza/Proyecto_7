@@ -22,6 +22,10 @@ app.use(cors());
 app.use (express.json());
 app.use (express.urlencoded({ extended: true }));
 
+//Middleware para archivos estaticos
+app.use ('/uploads', express.static('public/uploads'));
+
+
 //Middleware de rutas
 app.use('/api/v1', apiRouter);
 

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { URL_IMAGE } from '../utils/constants/regex.js';
 
 const Schema = mongoose.Schema;
 
@@ -7,6 +8,16 @@ const productSchema = new Schema({
     price: { type: Number, required: true },
     stock: { type: Number, required: true },
     description: { type: String, required: true },
+    image: {
+        type: String,
+        trim: true,
+        validate: {
+            validator(value) {
+                return URL_IMAGE.test(value);
+            },
+            message: 'La URL de la imagen no es valida'
+        }
+    },
     isActive: { type: Boolean, default: true },
 },
 {
