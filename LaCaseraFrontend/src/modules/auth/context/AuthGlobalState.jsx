@@ -10,18 +10,19 @@ const initialState = {
 }
 
 
-export const AuthGlobalState = ({childen}) => {
+export const AuthGlobalState = ({children}) => {
 
     const [ state, dispatch ] = useReducer(authReducer,initialState);
 
     const login = async ({email, password}) => {
         try {
             const dataLogin = await loginService({email, password});
-            const {token} = dataLogin;
+
+            const {token} = dataLogin[0];
             const user = dataLogin.data;
 
             if(!token || !user){
-                throw new Error('No se pudo iniciar la sesion',error);
+                throw new Error('No se pudo iniciar la sesion');
             }
 
             localStorage.setItem('token', token);
@@ -29,8 +30,8 @@ export const AuthGlobalState = ({childen}) => {
 
             dispatch({
                 type:'LOGIN',
-                payload:{ user, token }
-            })
+                payload: { user, token }
+            });
         
         } catch (error) {
             console.error("Error logging in:",error);
@@ -40,15 +41,24 @@ export const AuthGlobalState = ({childen}) => {
 
     }
 
+    const logout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        dispatch({
+            type: 'LOGOUT'
+        })
+    };
+
     return(
         <AuthContext.Provider
-            value={{  //doble corchete para escribir codigo de JS en 'html' y el segundo es por un objeto de JS
+            value={ {  //doble corchete para escribir codigo de JS en 'html' y el segundo es por un objeto de JS
                 user: state.user,
                 token: state.token,
-                login
-            }}
+                login,
+                logout
+            } }
         >
-            {childen}
+            {children}
         </AuthContext.Provider>
 
     )

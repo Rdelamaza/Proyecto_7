@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { loginService } from "../../services/userApiService";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 export const LoginForm =() => {
-
+    const { login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState ('');
+    const navigate = useNavigate();
 
     const handleLogin = async (event) => {
         event.preventDefault();    // evita que se reinicie la pagina al ahcer submit
@@ -15,8 +17,9 @@ export const LoginForm =() => {
             password
         }
         try {
-            const dataLogin = await loginService(formatData);
-            console.log(dataLogin);
+            await login(formatData);
+            navigate('/');
+
             
             
         } catch (error) {

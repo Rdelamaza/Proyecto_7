@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -9,9 +9,15 @@ import Button from 'react-bootstrap/Button';
 
 
 import "./navbar.css";
+import { AuthContext } from "../../../modules/auth/context/AuthContext";
 
 
 export const NavBar =() => {
+    const {user, logout}= useContext(AuthContext);
+
+    const handleLogout = ()=> {
+        logout();
+    };
     
     return (
         <>
@@ -66,9 +72,21 @@ export const NavBar =() => {
             <Form className="d-flex">
             </Form>
             </Navbar.Collapse>
-            <Nav.Link href="/login">Iniciar Sesión</Nav.Link>
+            <div>
+                {
+                    !user ? (
+                        <Nav.Link href="/login">Iniciar Sesión</Nav.Link>
+                    ) : (
+                        <div className="navbar-user-info">
+                            <span>{user.first_name} {user.last_name} </span>
+                            <Nav.Link href="/" onClick={handleLogout}> Logout </Nav.Link>
+                        </div>
+                        
+
+                    )
+                }
+            </div>
             <Nav.Link href="#accionregister">Registrate</Nav.Link>
-            
             
         </Container>
         </Navbar>
