@@ -70,10 +70,9 @@ const useCartContext = create (
             
                 if (!existingProduct) return;
             
-                // Filtra el producto ANTES de llamar a formatCartProducts
+
                 const updatedProducts = products.filter(product => product._id !== productID);
-            
-                // Ahora pasa el array filtrado a formatCartProducts
+
                 const [ , totalItemsUpdated, totalPriceUpdated ] = formatCartProducts(updatedProducts);
             
                 set(() => ({

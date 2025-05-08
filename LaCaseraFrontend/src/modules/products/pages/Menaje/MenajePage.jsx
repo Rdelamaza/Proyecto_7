@@ -35,6 +35,8 @@ export const MenajePage = () => {
     }
 
     return (
+    <>
+        <h1>Juegos de Vajilla</h1>
         <Container className="my-4">
             <Row xs={1} md={2} lg={3} xl={4} className="g-4">
             {products.map((product) => (
@@ -44,6 +46,7 @@ export const MenajePage = () => {
             ))}
         </Row>
         </Container>
+    </>
     );
 };
 

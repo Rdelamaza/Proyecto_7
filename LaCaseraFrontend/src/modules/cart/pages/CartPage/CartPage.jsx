@@ -14,12 +14,12 @@ const CartPage = () => {
         totalItems, 
         totalPrice, 
         addItem, 
-        removeOneItem,  // Usamos removeOneItem directamente
+        removeOneItem, 
         removeItem, 
         clearCart 
     } = useCartContext();
 
-    // Verificación de consistencia
+
     const calculatedTotal = products.reduce(
         (sum, product) => ({
             items: sum.items + product.quantity,
@@ -89,7 +89,7 @@ const CartPage = () => {
                                 </button>
                                 <span className="quantity">{product.quantity}</span>
                                 <button
-                                    onClick={() => removeOneItem(product._id)}  // Usamos removeOneItem aquí
+                                    onClick={() => removeOneItem(product._id)} 
                                     disabled={product.quantity <= 1}
                                     className="quantity-btn minus-btn"
                                     aria-label="Reducir cantidad"
@@ -103,7 +103,7 @@ const CartPage = () => {
                             </div>
                             <button
                                 className="remove-item"
-                                onClick={() => removeItem(product._id)}  // removeItem elimina completamente
+                                onClick={() => removeItem(product._id)} 
                                 aria-label={`Eliminar ${product.name} del carrito`}
                             >
                                 <BsTrash />
