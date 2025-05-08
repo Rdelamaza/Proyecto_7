@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { formatCartProducts } from "../../products/utils/formatCartProducts";
 
 const useCartContext = create (
     persist(
@@ -35,7 +36,33 @@ const useCartContext = create (
                     }))
 
                 }
+            },
+            removeItem : (productID) => {
+                const products = get().products;
+                const existingProduct = products.find(product => product.id === productID);
+
+                if(!existingProduct) return;
+
+                const [updatedProducts, totalItemsUpdated, totalPriceUpdated] = formatCartProducts(products,productID);
+
+                set((state) => ({
+                    products: updatedProducts,
+                    totalItems:totalItemsUpdated,
+                    totalPrice:totalPriceUpdated
+                }))
+            },
+            clearCart: () => {
+                set(()=>({
+                    products: [],
+                    totalItems: 0,
+                    totalPrice: 0
+
+                }))
             }
-        })
+
+
+                
+            }
+        )
     )
 )
