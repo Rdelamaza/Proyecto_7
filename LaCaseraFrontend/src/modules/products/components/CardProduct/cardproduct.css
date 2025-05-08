@@ -1,0 +1,23 @@
+/* Contenedor de imagen para mantener proporción */
+.product-image-container {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+  /* Efecto hover personalizado */
+.product-card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+  /* Ajuste para imágenes */
+.product-card img {
+    object-fit: contain;
+    max-height: 100%;
+    max-width: 100%;
+}

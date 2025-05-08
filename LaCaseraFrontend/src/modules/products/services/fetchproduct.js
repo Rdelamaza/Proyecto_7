@@ -1,9 +1,9 @@
-import axios from "axios";
+import { apiClient } from "../../../shared/services/apiClient";
 
 
 export const fetchAllProduct = async () =>{
     try {
-        const {data} = await axios.get('http://localhost:3000/api/v1/products');
+        const {data} = await apiClient.get('/products')
         console.log(data);
         
         return data;
@@ -12,3 +12,13 @@ export const fetchAllProduct = async () =>{
         throw new Error(error);        
     }
 };
+
+export const fetchProductById = async(id)=>{
+    try {
+        const {data} = await apiClient.get(`/products/${id}`);
+        return data;
+    } catch (error) {
+        console.error(`Error obteniendo el producto con el id: ${id}`,error);
+        
+    }
+};    

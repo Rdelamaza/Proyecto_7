@@ -3,7 +3,7 @@ import  HomePage  from '../../shared/pages/home/HomePage';
 import  AboutPage  from '../../shared/pages/about/AboutPage';
 import  NavBar  from '../../shared/components/navbar/NavBar';
 import ContactPage from '../../shared/pages/contact/ContactPage';
-import MenajePage from '../../modules/products/pages/MenajePage';
+import MenajePage from '../../modules/products/pages/Menaje/MenajePage';
 import { LoginPage } from '../../modules/auth/pages/LoginPage/Login';
 
 export const AppRouter = () => {

@@ -5,7 +5,7 @@ import './WhatsAppFloatButton.css'; // Opcional: para estilos adicionales
 
 const WhatsAppFloatButton = ({ phoneNumber = '', message = '', bottom = '30px', right = '30px' }) => {
 if (!phoneNumber) {
-    onsole.error("WhatsAppButton: phoneNumber es requerido");
+    console.error("WhatsAppButton: phoneNumber es requerido");
     return null;
 } 
 

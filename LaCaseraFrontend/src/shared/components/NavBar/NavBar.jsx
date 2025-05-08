@@ -74,7 +74,7 @@ export const NavBar =() => {
             <div>
                 {
                     !user ? (
-                        <Nav.Link as={Link} to="/login">Iniciar Sesión</Nav.Link>
+                        <Nav.Link as={Link} to="/login">Inicia Sesión o Registrate</Nav.Link>
                     ) : (
                         <div className="navbar-user-info">
                             <span>{user.first_name} {user.last_name} </span>
@@ -85,7 +85,6 @@ export const NavBar =() => {
                     )
                 }
             </div>
-            <Nav.Link href="#accionregister">Registrate</Nav.Link>
             
         </Container>
         </Navbar>

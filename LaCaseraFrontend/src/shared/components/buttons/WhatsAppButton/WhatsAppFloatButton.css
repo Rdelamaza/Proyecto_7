@@ -1,32 +1,52 @@
 .whatsapp-float-container {
-    position: fixed;
-    z-index: 1000;
-    transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-float-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Cambiado a 50% para un círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366; /* Color verde de WhatsApp */
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden; /* Asegura que nada se salga del círculo */
+}
+
+/* Icono de WhatsApp (puedes usar un SVG o Font Awesome) */
+.whatsapp-float-button i {
+  font-size: 28px;
+}
+
+.whatsapp-float-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Versión con animación de pulso */
+.whatsapp-float-button.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-  
-  .whatsapp-float-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .whatsapp-float-button:hover {
+  50% {
     transform: scale(1.1);
-    background-color: #128C7E !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   }
-  
-  /* Efecto de pulso opcional */
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-  
-  .whatsapp-float-button.pulse {
-    animation: pulse 2s infinite;
-  }
+}

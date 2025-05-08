@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { fetchAllProduct } from "../services/fetchproduct";
-import { CardProduct } from "../components/CardProduct";
+import { fetchAllProduct } from "../../services/fetchproduct";
+import { CardProduct } from "../../components/CardProduct/CardProduct";
 
 
 export const MenajePage = () => {
