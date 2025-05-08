@@ -1,4 +1,3 @@
-/* cartaddbutton.css */
 
 .buttonBase {
     border: none;
@@ -8,55 +7,46 @@
     text-align: center;
     transition: background-color 0.3s ease;
     white-space: nowrap;
-  }
-  
-  .small {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-  }
-  
-  .medium {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-  
-  .large {
-    padding: 10px 20px;
+}
+
+.small {
+    padding: 3px 6px;
     font-size: 1rem;
-  }
-  
-  .primaryColor {
+}
+
+
+.primaryColor {
     background-color: #987953;
     color: white;
-  }
-  
-  .primaryColor:hover {
+}
+
+.primaryColor:hover {
     background-color: #e3c382;
-  }
-  
-  .secondaryColor {
+}
+
+.secondaryColor {
     background-color: #6c757d;
     color: white;
-  }
-  
-  .secondaryColor:hover {
+}
+
+.secondaryColor:hover {
     background-color: #545b62;
-  }
-  
-  .customColor {
+}
+
+.customColor {
     background-color: #28a745;
     color: white;
-  }
-  
-  .customColor:hover {
+}
+
+.customColor:hover {
     background-color: #1e7e34;
-  }
-  
-  .softBlue {
+}
+
+.softBlue {
     background-color: #5cb8ff;
     color: white;
-  }
-  
-  .softBlue:hover {
+}
+
+.softBlue:hover {
     background-color: #3399ff;
-  }
+}

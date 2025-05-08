@@ -3,7 +3,7 @@ import useCartContext from "../context/CartContext";
 import { Button } from "react-bootstrap";
 import './cartaddbutton.css'; // Importa tu archivo CSS personalizado
 
-export const CartAddButton = ({ product, isAvailable, size = "medium", color = "primaryColor" }) => {
+export const CartAddButton = ({ product, isAvailable, size = "small", color = "primaryColor" }) => {
     const addItem = useCartContext((state) => state.addItem);
     const handleAddToCart = () => {
         if (isAvailable) {
