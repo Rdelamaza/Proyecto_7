@@ -54,3 +54,71 @@ transform: scale(1.05);
     background-color: #e3c382 !important;
     transform: scale(1.03) translateX(5px); /* Pequeño desplazamiento a la derecha */
 }
+
+/* Shooping bag*/
+
+/* Estilos para el contenedor del icono */
+.cart-icon-container {
+    position: relative;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+  /* Icono de la bolsa */
+.cart-icon {
+    font-size: 1.5rem;
+    color: #212529;
+}
+
+  /* Contador de productos */
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+  /* Efecto hover */
+.cart-icon-container:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.10);
+    border-color: #adb5bd;
+}
+
+  /* Versión mobile */
+@media (max-width: 768px) {
+.cart-icon-container {
+    width: 36px;
+    height: 36px;
+    margin: 0 0.3rem;
+}
+    
+.cart-icon {
+    font-size: 1rem;
+    }
+    
+.cart-counter {
+    width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+    }
+}

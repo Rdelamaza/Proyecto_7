@@ -3,6 +3,7 @@ import { Card, Button, Badge } from 'react-bootstrap';
 import { formatCurrency} from '../../../../shared/utils/formatCurrency';
 import {env} from '../../../../config/env.config';
 import './cardproduct.css';
+import { CartAddButton } from '../../../cart/components/CartAddButton';
 
 const {optionsCurrency} = env
 
@@ -10,13 +11,6 @@ const {optionsCurrency} = env
 export const CardProduct = ({product}) => {
     const isAvailable = product.stock > 0;
     return (
-        //<div className="card">
-           // <img src={product.image} />
-            //<h2>{product.name}</h2>
-            //<p>Precio: {product.price} pesos</p>
-           // <p>Stock: {product.stock}unidades</p>
-           // <p>Descripcion: {product.description}</p>
-       // </div>
 
       <Card className="h-100 shadow-sm product-card">
        {/* Imagen del producto */}
@@ -49,13 +43,8 @@ export const CardProduct = ({product}) => {
             {isAvailable ? 'Disponible' : '✖ Agotado'}
           </Badge>
           
-          <Button
-            variant={isAvailable ? 'primary' : 'secondary'}
-            size="sm"
-            disabled={!isAvailable}
-          >
-            {isAvailable ? 'Agregar al carrito' : 'No disponible'}
-          </Button>
+          <CartAddButton product={product} isAvailable={isAvailable} />
+
         </div>
       </Card.Body>
     </Card>

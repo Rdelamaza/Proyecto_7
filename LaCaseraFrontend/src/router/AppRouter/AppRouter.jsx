@@ -5,6 +5,7 @@ import  NavBar  from '../../shared/components/navbar/NavBar';
 import ContactPage from '../../shared/pages/contact/ContactPage';
 import MenajePage from '../../modules/products/pages/Menaje/MenajePage';
 import { LoginPage } from '../../modules/auth/pages/LoginPage/Login';
+import CartPage from '../../modules/cart/pages/CartPage/CartPage'
 
 export const AppRouter = () => {
     return (
@@ -16,6 +17,7 @@ export const AppRouter = () => {
                 <Route path="/contact" element={<ContactPage/>}/>
                 <Route path="/menaje" element={<MenajePage/>}/>
                 <Route path="/login" element={<LoginPage/>} />
+                <Route path="/cart" element={<CartPage/>}/>
                 {/*
 
                 <Route path="/manteleria" element={<ManteleriaPage/>}/>

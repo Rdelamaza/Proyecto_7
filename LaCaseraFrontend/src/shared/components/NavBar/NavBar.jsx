@@ -5,16 +5,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import{ Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-
-
-
 import "./navbar.css";
 import { AuthContext } from "../../../modules/auth/context/AuthContext";
+import useCartContext from "../../../modules/cart/context/CartContext";
+import { BsBag } from "react-icons/bs";
 
 
 export const NavBar =() => {
     const {user, logout}= useContext(AuthContext);
+    const {totalItems} = useCartContext();
 
     const handleLogout = ()=> {
         logout();
@@ -66,11 +65,24 @@ export const NavBar =() => {
                     </NavDropdown>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
                     <Nav.Link as={Link} to="/about">About</Nav.Link>
+
                 </Nav>
 
-            <Form className="d-flex">
-            </Form>
+            <Form className="d-flex"></Form>
             </Navbar.Collapse>
+            <div className="d-flex align-items-center"/>
+            
+            <Link to="/cart" className="cart-icon-container" aria-label="Bolsa de compras">
+                <BsBag className="cart-icon" />
+                    {totalItems > 0 && (
+                <span className="cart-counter">
+                    {totalItems}
+                </span>
+                )}
+            </Link>
+
+
+
             <div>
                 {
                     !user ? (
@@ -84,8 +96,8 @@ export const NavBar =() => {
 
                     )
                 }
+                
             </div>
-            
         </Container>
         </Navbar>
 
