@@ -5,6 +5,7 @@ import useCartContext from '../../context/CartContext';
 import './cartpage.css';
 import formatCurrency from '../../../../shared/utils/formatCurrency';
 import { env } from '../../../../config/env.config';
+import { MercadoPagoButton } from '../../../payments/components/MercadoPagoButton';
 
 const { optionsCurrency } = env;
 
@@ -18,6 +19,12 @@ const CartPage = () => {
         removeItem, 
         clearCart 
     } = useCartContext();
+
+        const handleCheckout = () => {
+        alert("Pedido realizado con éxito! muchas gracias por su compra!");
+        clearCart();
+        onClose();
+    };
 
 
     const calculatedTotal = products.reduce(
@@ -126,7 +133,15 @@ const CartPage = () => {
                         <span>Total:</span>
                         <span>{formatCurrency(totalPrice, optionsCurrency)}</span>
                     </div>
-                    <button className="checkout-btn">Proceder al pago</button>
+
+                    {/*<button className="checkout-btn">Proceder al pago</button>*/}
+                    <MercadoPagoButton
+                        cart = {products}
+                        onPaymentSuccess={handleCheckout}
+
+                    
+                    />
+
                     <button 
                         className="clear-cart"
                         onClick={() => {

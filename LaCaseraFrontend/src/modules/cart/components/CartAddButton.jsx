@@ -1,7 +1,7 @@
 import React from "react";
 import useCartContext from "../context/CartContext";
 import { Button } from "react-bootstrap";
-import './cartaddbutton.css'; // Importa tu archivo CSS personalizado
+import './cartaddbutton.css'; 
 
 export const CartAddButton = ({ product, isAvailable, size = "small", color = "primaryColor" }) => {
     const addItem = useCartContext((state) => state.addItem);
@@ -11,12 +11,11 @@ export const CartAddButton = ({ product, isAvailable, size = "small", color = "p
         }
     };
 
-  // Construye dinámicamente las clases CSS
     const buttonClasses = `buttonBase ${size} ${color}`;
 
         return (
             <Button
-                className={buttonClasses} // Aplica tus clases CSS personalizadas
+                className={buttonClasses}
                 onClick={handleAddToCart}
                 disabled={!isAvailable}
                 aria-disabled={!isAvailable}

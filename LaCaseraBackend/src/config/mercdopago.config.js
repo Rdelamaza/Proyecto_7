@@ -4,7 +4,7 @@ import {envs} from './envs.config.js';
 const {mercadoPagoToken} = envs;
 
 const client = new MercadoPagoConfig({
-    accesToken: mercadoPagoToken,
+    accessToken: mercadoPagoToken,
     options: { sandbox:true }
 });
 

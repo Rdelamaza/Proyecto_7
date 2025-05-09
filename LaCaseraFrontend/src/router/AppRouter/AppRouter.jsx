@@ -7,6 +7,7 @@ import MenajePage from '../../modules/products/pages/Menaje/MenajePage';
 import { LoginPage } from '../../modules/auth/pages/LoginPage/Login';
 import CartPage from '../../modules/cart/pages/CartPage/CartPage'
 import { RegisterPage } from '../../modules/auth/pages/RegisterPage/Register';
+import { MercadoPagoStatus } from '../../modules/payments/components/MercadoPagoStatus';
 
 export const AppRouter = () => {
     return (
@@ -20,6 +21,7 @@ export const AppRouter = () => {
                 <Route path="/login" element={<LoginPage/>} />
                 <Route path="/register" element={<RegisterPage/>}/>
                 <Route path="/cart" element={<CartPage/>}/>
+                <Route path="/mercadopago/status" element= {<MercadoPagoStatus/>}/>
                 {/*
 
                 <Route path="/manteleria" element={<ManteleriaPage/>}/>
