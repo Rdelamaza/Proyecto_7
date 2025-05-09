@@ -1,0 +1,29 @@
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden; 
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Contenedor de imagen personalizado */
+.image-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el contenedor manteniendo proporciones */
+    object-position: center; /* Centra la imagen */
+}
+
+/* Ajustes para el carrusel de Bootstrap */
+.carousel {
+    border-radius: 12px; /* Opcional: bordes redondeados */
+}
+
+.carousel-inner {
+    width: 100% !important; /* Fuerza el ancho completo */
+}

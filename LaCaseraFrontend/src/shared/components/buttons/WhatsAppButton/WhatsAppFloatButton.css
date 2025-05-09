@@ -8,7 +8,7 @@
 .whatsapp-float-button {
   width: 60px;
   height: 60px;
-  border-radius: 50%; /* Cambiado a 50% para un círculo perfecto */
+  border-radius: 100%; /* Cambiado a 50% para un círculo perfecto */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
 
 /* Icono de WhatsApp (puedes usar un SVG o Font Awesome) */
 .whatsapp-float-button i {
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .whatsapp-float-button:hover {

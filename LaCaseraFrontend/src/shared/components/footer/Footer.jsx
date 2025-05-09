@@ -1,63 +1,55 @@
-import react from "react";
+import React from 'react';
+import { Facebook, Instagram } from 'react-bootstrap-icons';
 import "./footer.css";
+import { Container, Row, Col } from 'react-bootstrap'; // Importa los componentes de React Bootstrap
 
-
-
-
-export const Footer =()=>{
+export const Footer = () => {
     return (
-
         <>
-        <footer className="container-fluid bg-grey">
-            <div className="container">
+        <footer className="bg-grey py-4"> {/* Añadí py-4 para un poco de padding vertical */}
+            <Container>
+            <Row>
+                <Col md={4} className="mb-4">
+                <h5>La Cacera</h5>
+                <p>Menaje y decoracion</p>
+                </Col>
 
-                <div className="row">
-        
-                    <div className="col-md-4 mb-4">
-                        <h5>La Cacera</h5>
-                        <p>Menaje y decoracion</p>
-                    </div>
-        
+                <Col md={4} className="mb-4">
+                <h5>Enlaces rápidos</h5>
+                <ul className="list-unstyled">
+                    <li><a href="#inicio" className="text-black">Inicio</a></li>
+                    <li><a href="#productos" className="text-black">Tienda Online</a></li>
+                    <li><a href="#nosotros" className="text-black">Nuestro Equipo</a></li>
+                    <li><a href="#contacto" className="text-black">Contacto</a></li>
+                </ul>
+                </Col>
 
-                    <div className="col-md-4 mb-4">
-                        <h5>Enlaces rápidos</h5>
-                        <ul className="list-unstyled">
-                            <li><a href="#inicio" className="text-black">Inicio</a></li>
-                            <li><a href="#productos" className="text-black">Tienda Online</a></li>
-                            <li><a href="#nosotros" className="text-black">Nuestro Equipo</a></li>
-                            <li><a href="#contacto" className="text-black">Contacto</a></li>
-                        </ul>
-                    </div>
+                <Col md={4} className="mb-4">
+                <h5>Síguenos</h5>
+                <ul className="list-unstyled d-flex justify-content-center">
+                    <li className="me-3">
+                    <a href="https://www.facebook.com/p/%F0%9D%90%8B%F0%9D%90%9A-%F0%9D%90%82%F0%9D%90%9A%F0%9D%90%AC%F0%9D%90%9E%F0%9D%90%AB%F0%9D%90%9A-100086087177134/" className="text-black" target="_blank" rel="noopener noreferrer">
+                        <Facebook size={24} /> {/* Usando el componente Facebook */}
+                    </a>
+                    </li>
+                    <li className="me-3">
+                    <a href="https://www.instagram.com/__lacasera/?hl=es" className="text-black" target="_blank" rel="noopener noreferrer">
+                        <Instagram size={24} /> {/* Usando el componente Instagram */}
+                    </a>
+                    </li>
+                </ul>
+                </Col>
+            </Row>
 
-                    <div className="col-md-4 mb-4">
-                        <h5>Síguenos</h5>
-                        <ul className="list-unstyled d-flex justify-content-center">
-                            <li className="me-3"><a href="#" className="text-black"><i className="bi bi-facebook"></i></a></li>
-                            <li className="me-3"><a href="#" className="text-black"><i className="bi bi-instagram"></i></a></li>
-                            <li className="me-3"><a href="#" className="text-black"><i className="bi bi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                
+            <hr className="bg-black" />
 
-                <hr className="bg-black"/>
-        
-
-                <div className="text-center">
-                    <p>&copy; 2025 La Casera. Todos los derechos reservados.(Raimundo De La Maza)</p>
-                </div>
+            <div className="text-center">
+                <p>&copy; 2025 La Casera. Todos los derechos reservados.(Raimundo De La Maza)</p>
             </div>
+            </Container>
         </footer>
-
-    
         </>
-
-
-
-
-
-    )
-    
-}
+    );
+};
 
 export default Footer;

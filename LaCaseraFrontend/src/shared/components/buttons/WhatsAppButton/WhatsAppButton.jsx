@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaWhatsapp } from 'react-icons/fa';
-import './WhatsAppFloatButton.css'; // Opcional: para estilos adicionales
+import './WhatsAppFloatButton.css';
 
 const WhatsAppFloatButton = ({ phoneNumber = '', message = '', bottom = '30px', right = '30px' }) => {
 if (!phoneNumber) {
