@@ -4,6 +4,7 @@ dontev.config();
 
 export const envs ={
     port: process.env.PORT || 3020,
+    frontendUrl:process.env.URL_FRONTEND,
     db:{
         uri: process.env.MONGO_URI,
     },
@@ -12,4 +13,5 @@ export const envs ={
         secretKey: process.env.SECRET_KEY,
         jwtExpire: process.env.JWT_EXPIRE,
     },
+    mercadoPagoToken: process.env.MERCADOPAGO_ACCES_TOKEN,
 };

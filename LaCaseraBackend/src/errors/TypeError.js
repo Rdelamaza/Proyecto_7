@@ -46,3 +46,9 @@ export class FileServiceError extends CustomError {
         super(message ||'Error en el servicio de archivos', statusCode|| 500, details); 
     }
 };
+
+export class PaymentsError extends CustomError {
+    constructor(message, statusCode, details){
+        super(message ||'Error en el servicio de pagos',statusCode, 500, details );
+    }
+};
