@@ -29,17 +29,5 @@ export const LoginPage = () => {
     </div>
     </div>
 
-
-
-        /*<>
-        <h1>Inciar Sesión</h1>
-        <LoginForm/>
-        <p>
-            ¿No tienes una cuenta? <Link to="/register">Registrate aqui</Link>
-
-        </p>
-
-        
-        </>*/
     )
 }
