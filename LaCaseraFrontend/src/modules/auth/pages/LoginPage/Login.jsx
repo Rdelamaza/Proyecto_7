@@ -6,28 +6,37 @@ import './loginpage.css';
 export const LoginPage = () => {
     return (
 
-        <div className="login-container">
-            <div className="login-card">
-            <div className="login-header">
-            <h1 className="login-title">Iniciar Sesión</h1>
-            <p className="login-subtitle">Ingresa a tu cuenta de La Casera</p>
-        </div>
+    <div className="container mt-3">
+        <div className="row justify-content-center">
+            <div className="col-md-20 col-lg-10">
+            <div className="card shadow">
+                <div className="card-body p-4">
+                {/* Encabezado */}
+                <div className="text-center mb-4">
+                    <h1 className="card-title">Iniciar Sesión</h1>
+                    <p className="text-muted">Ingresa a tu cuenta de La Casera</p>
+                </div>
 
-        <LoginForm />
+                {/* Formulario (usando tu componente LoginForm ya estilizado) */}
+                <LoginForm />
 
-        <div className="login-footer">
-        <p className="login-link-text">
-            ¿No tienes una cuenta?{" "}
-            <Link to="/register" className="login-link">
-            Regístrate aquí
-            </Link>
-        </p>
-        <Link to="#" className="forgot-password">
-            ¿Olvidaste tu contraseña?
-        </Link>
+                {/* Pie de página */}
+                <div className="mt-3 text-center">
+                    <p className="mb-2">
+                    ¿No tienes una cuenta?{" "}
+                    <Link to="/register" className="text-primary">
+                        Regístrate aquí
+                    </Link>
+                    </p>
+                    <Link to="#" className="text-muted">
+                    ¿Olvidaste tu contraseña?
+                    </Link>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
-    </div>
+        </div>
 
     )
 }
