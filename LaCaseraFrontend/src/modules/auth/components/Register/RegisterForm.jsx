@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { FORM_INITIAL_STATE } from "../../utils/types/initialFormState";
@@ -22,24 +22,24 @@ export const RegisterForm = () => {
         validateField(name, value);
     }, [validateField]);
 
-    const handleSubmit = async (event) => {
+const handleSubmit = async(event) => {
         event.preventDefault();
         setFormError("");
 
-        if (!validateForm()) {
-        setFormError("Por favor, corrige los errores antes de enviar.");
-        return;
+        if(validateForm()) {
+            setFormError('Por favor, corrige los errores antes de continuar.');
+            return;
         }
 
-        setIsLoading(true);
-
         try {
-        await register(formData);
-        navigate("/", { state: { success: "¡Registro exitoso! Inicia sesión." } });
+
+            console.log("formDataToSend", formData);
+            await register(formData);
+            alert("Usuario registrado correctamente, por favor inicie sesión.");
+            navigate('/login');
         } catch (error) {
-        setFormError(error.message || "Error al registrar. Intenta nuevamente.");
-        } finally {
-        setIsLoading(false);
+            console.error("Error registering:", error);
+            setFormError("Error al registrar el usuario. Por favor, inténtelo de nuevo más tarde.");
         }
     };
 

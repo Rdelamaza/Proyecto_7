@@ -125,10 +125,12 @@ const CartPage = () => {
                         <span>Subtotal ({totalItems} {totalItems === 1 ? 'unidad' : 'unidades'}):</span>
                         <span>{formatCurrency(totalPrice, optionsCurrency)}</span>
                     </div>
+
                     <div className="summary-row">
                         <span>Envío:</span>
                         <span className="free-shipping">Gratis</span>
                     </div>
+                    
                     <div className="summary-total">
                         <span>Total:</span>
                         <span>{formatCurrency(totalPrice, optionsCurrency)}</span>
@@ -138,19 +140,17 @@ const CartPage = () => {
                     <MercadoPagoButton
                         cart = {products}
                         onPaymentSuccess={handleCheckout}
-
-                    
                     />
 
                     <button 
                         className="clear-cart"
-                        onClick={() => {
+                        onClick={() => { 
                             if (window.confirm('¿Estás seguro de vaciar el carrito?')) {
                                 clearCart();
                             }
                         }}
                     >
-                        Vaciar carrito
+                        Vaciar bolsa
                     </button>
                     <Link to="/" className="continue-shopping">
                         <BsArrowLeft /> Seguir comprando

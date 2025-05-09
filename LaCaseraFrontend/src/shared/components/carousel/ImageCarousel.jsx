@@ -13,7 +13,7 @@ const ImageCarousel = () => {
                     />
                     <Carousel.Caption>
                         <h3>Vajillas</h3>
-                        <p>Juegos d vajillas</p>
+                        <p>Juegos de vajillas</p>
                     </Carousel.Caption>
                 </Carousel.Item>
 

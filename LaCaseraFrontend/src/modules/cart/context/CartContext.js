@@ -64,6 +64,7 @@ const useCartContext = create (
                 }
             },
 
+
             removeItem: (productID) => {
                 const products = get().products;
                 const existingProduct = products.find(product => product._id === productID);
@@ -81,6 +82,13 @@ const useCartContext = create (
                     totalPrice: totalPriceUpdated
                 }));
             },
+            clearCart: () => {
+                set(() => ({
+                    products: [],
+                    totalItems: 0,
+                    totalPrice: 0
+                }));
+},
         }),
         {
             name: "cart-storage", //Nombre para la persistencia en el localStorage

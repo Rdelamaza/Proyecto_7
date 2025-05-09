@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import  HomePage  from '../../shared/pages/home/HomePage';
 import  AboutPage  from '../../shared/pages/about/AboutPage';
-import  NavBar  from '../../shared/components/navbar/NavBar';
+import  NavBar  from '../../shared/components/NavBar/NavBar';
 import ContactPage from '../../shared/pages/contact/ContactPage';
 import MenajePage from '../../modules/products/pages/Menaje/MenajePage';
 import { LoginPage } from '../../modules/auth/pages/LoginPage/Login';

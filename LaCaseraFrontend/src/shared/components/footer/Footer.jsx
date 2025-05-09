@@ -10,7 +10,7 @@ export const Footer = () => {
             <Container>
             <Row>
                 <Col md={4} className="mb-4">
-                <h5>La Cacera</h5>
+                <h5>La Casera</h5>
                 <p>Menaje y decoracion</p>
                 </Col>
 
