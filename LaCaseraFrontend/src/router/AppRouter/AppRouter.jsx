@@ -6,6 +6,7 @@ import ContactPage from '../../shared/pages/contact/ContactPage';
 import MenajePage from '../../modules/products/pages/Menaje/MenajePage';
 import { LoginPage } from '../../modules/auth/pages/LoginPage/Login';
 import CartPage from '../../modules/cart/pages/CartPage/CartPage'
+import { RegisterPage } from '../../modules/auth/pages/RegisterPage/Register';
 
 export const AppRouter = () => {
     return (
@@ -17,6 +18,7 @@ export const AppRouter = () => {
                 <Route path="/contact" element={<ContactPage/>}/>
                 <Route path="/menaje" element={<MenajePage/>}/>
                 <Route path="/login" element={<LoginPage/>} />
+                <Route path="/register" element={<RegisterPage/>}/>
                 <Route path="/cart" element={<CartPage/>}/>
                 {/*
 

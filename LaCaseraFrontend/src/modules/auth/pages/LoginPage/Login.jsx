@@ -18,7 +18,7 @@ export const LoginPage = () => {
         <div className="login-footer">
         <p className="login-link-text">
             ¿No tienes una cuenta?{" "}
-            <Link to="#" className="login-link">
+            <Link to="/register" className="login-link">
             Regístrate aquí
             </Link>
         </p>
