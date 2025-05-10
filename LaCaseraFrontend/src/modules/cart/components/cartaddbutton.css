@@ -12,16 +12,14 @@
     font-size: 15px;
 }
 
-
-/* Estados interactivos */
 .primaryColor:hover {
-    background-color: #D2C08E; /* Arena oscuro al pasar mouse */
+    background-color: #D2C08E;
 }
 
 .primaryColor:active, 
 .primaryColor:focus, 
 .primaryColor:focus-visible {
-    background-color: #E5D9B6 !important; /* Mantiene el color arena al presionar */
-    outline: none !important; /* Elimina el borde azul de focus */
-    box-shadow: none !important; /* Elimina sombra por defecto */
+    background-color: #E5D9B6 !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
