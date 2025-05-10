@@ -5,6 +5,10 @@ import paymentRouter from './payments.routes.js'
 
 const router = Router();
 
+router.get('/', (req, res) => {
+  res.send('¡Estas conectado al backend!'); // O cualquier otra respuesta
+});
+
 router.use ('/products', productRouter);
 router.use ('/users', userRouter);
 router.use ('/payments',paymentRouter);
