@@ -1,4 +1,4 @@
-import { response } from '../../utils/templates/response.template.js';
+import { response } from '../../utils/Templates/response.template.js';
 import {getAllDeletedProductsService,
     getDeletedProductByIdService, 
     restoreProductByIdService
