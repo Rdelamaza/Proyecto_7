@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 import { authReducer } from "./authReducer.js"
 import { loginService, registerService } from "../services/userApiService.js";
-import { AuthContext } from './AuthContext.js';
+import  AuthContext  from './authContext.js';
 
 
 const initialState = {

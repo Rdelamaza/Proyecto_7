@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import{ Link } from 'react-router-dom';
 import "./navbar.css";
-import { AuthContext } from "../../../modules/auth/context/AuthContext";
+import { AuthContext } from "../../../modules/auth/context/authContext";
 import useCartContext from "../../../modules/cart/context/CartContext";
 import { BsBag } from "react-icons/bs";
 
