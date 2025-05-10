@@ -29,6 +29,11 @@ app.use ('/uploads', express.static('public/uploads'));
 //Middleware de rutas
 app.use('/api/v1', apiRouter);
 
+// Ruta base para verificar que el backend funciona
+app.get('/', (req, res) => {
+    res.send('API funcionando correctamente 🚀');
+});
+
 //Middleware de errores
 app.use(errorHandler);
 
