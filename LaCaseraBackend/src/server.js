@@ -15,7 +15,7 @@ const app = express ();
 dbConnect(); //updateDocs para actualizar los documentos de la base de datos
 
 //Middleware de Cors
-app.use(cors());
+app.use(cors({origin: "https://proyecto-7-fmop.onrender.com"}));
 
 //Middleware para parsear el body a JSON
 
