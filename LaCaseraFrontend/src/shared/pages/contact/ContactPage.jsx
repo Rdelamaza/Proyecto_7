@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form } from "react-bootstrap";
-import { CardImage, EnvelopeFill, TelephoneFill } from 'react-bootstrap-icons';
+import {  EnvelopeFill, TelephoneFill } from 'react-bootstrap-icons';
 
 export const Contacto = () => {
 

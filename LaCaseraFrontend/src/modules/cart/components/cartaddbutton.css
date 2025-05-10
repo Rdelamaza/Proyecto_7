@@ -1,52 +1,27 @@
-
-.buttonBase {
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
-}
-
-.small {
-    padding: 3px 6px;
-    font-size: 1rem;
-}
-
-
 .primaryColor {
-    background-color: #987953;
-    color: white;
+    background-color: #E5D9B6; /* Color arena base */
+    color: #333;
+    font-weight: 700; /* Texto en negrita (equivalente a "bold") */
+    width: 120px; /* Ancho personalizable */
+    height: 40px; /* Altura reducida */
+    padding: 0; /* Elimina padding por defecto */
+    aspect-ratio: 3/1; /* Relación ancho/alto (3 veces más ancho que alto) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
 }
 
+
+/* Estados interactivos */
 .primaryColor:hover {
-    background-color: #e3c382;
+    background-color: #D2C08E; /* Arena oscuro al pasar mouse */
 }
 
-.secondaryColor {
-    background-color: #6c757d;
-    color: white;
-}
-
-.secondaryColor:hover {
-    background-color: #545b62;
-}
-
-.customColor {
-    background-color: #28a745;
-    color: white;
-}
-
-.customColor:hover {
-    background-color: #1e7e34;
-}
-
-.softBlue {
-    background-color: #5cb8ff;
-    color: white;
-}
-
-.softBlue:hover {
-    background-color: #3399ff;
+.primaryColor:active, 
+.primaryColor:focus, 
+.primaryColor:focus-visible {
+    background-color: #E5D9B6 !important; /* Mantiene el color arena al presionar */
+    outline: none !important; /* Elimina el borde azul de focus */
+    box-shadow: none !important; /* Elimina sombra por defecto */
 }

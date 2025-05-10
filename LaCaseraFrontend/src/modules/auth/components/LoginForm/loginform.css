@@ -1,0 +1,9 @@
+.btn-custom {
+    background-color: #E5D9B6;  /* Rojo pastel */
+    border-color: #E5D9B6;
+    color: black;
+}
+.btn-custom:hover {
+    background-color: #D2C08E;
+    border-color: #D2C08E;
+}

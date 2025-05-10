@@ -39,7 +39,7 @@ export const CardProduct = ({product}) => {
 
 
         <div className="mt-auto d-flex justify-content-between align-items-center">
-          <Badge bg={isAvailable ? 'success' : 'danger'}className="py-1 px-2 fs-7">
+          <Badge bg={isAvailable ? 'success' : 'danger'}className="py-1 px-1 fs-10">
             {isAvailable ? 'Disponible' : '✖ Agotado'}
           </Badge>
           

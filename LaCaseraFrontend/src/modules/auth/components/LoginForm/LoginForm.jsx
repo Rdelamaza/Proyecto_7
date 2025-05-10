@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
+import "./loginform.css";
 
 
 export const LoginForm =() => {
@@ -76,7 +77,7 @@ export const LoginForm =() => {
                     <div className="d-grid">
                     <button
                         type="submit"
-                        className="btn btn-primary py-2"
+                        className="btn btn-custom py-2"
                         disabled={isLoading}
                     >
                         {isLoading ? (

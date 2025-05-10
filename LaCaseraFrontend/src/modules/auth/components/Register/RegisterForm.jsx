@@ -176,7 +176,7 @@ const handleSubmit = async(event) => {
                     <div className="d-grid">
                     <button
                         type="submit"
-                        className="btn btn-primary py-2"
+                        className="btn btn-custom py-2"
                         disabled={isLoading}
                     >
                         {isLoading ? (
