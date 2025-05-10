@@ -1,5 +1,5 @@
 import { useCallback, useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import { FORM_INITIAL_STATE } from "../../utils/types/initialFormState";
 import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";

@@ -64,7 +64,7 @@ export const NavBar =() => {
                     </NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
-                    <Nav.Link as={Link} to="/about">About</Nav.Link>
+                   { /*<Nav.Link as={Link} to="/about">About</Nav.Link>*/ }
 
                 </Nav>
 
