@@ -6,3 +6,23 @@
     margin-bottom: 50px;
 }
 
+.btn-arena {
+    background-color: #E5D9B6!important;
+    border-color: #E5D9B6 !important;
+    color: #333!important; /* Texto oscuro para contraste */
+    font-weight: bold;
+    padding: 8px 24px;
+    width: 100%; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-arena:hover {
+    background-color: #D2C08E !important;
+    border-color: #D2C08E !important;
+}
+
+.btn-arena:active, 
+.btn-arena:focus {
+  background-color: #E5D9B6 !important; /* Mantiene el color al presionar */
+  box-shadow: none !important; /* Elimina el sombreado azul de Bootstrap */
+}
