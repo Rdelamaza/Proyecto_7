@@ -3,7 +3,7 @@ import { apiClient } from "../../../shared/services/apiClient";
 
 export const fetchAllProduct = async () =>{
     try {
-        const {data} = await apiClient.get('/products')
+        const {data} = await apiClient.get('/products/')
         console.log(data);
         
         return data;
