@@ -18,7 +18,7 @@ export const AuthProvider = ({children}) => {
         try {
             const dataLogin = await loginService({email, password});
 
-            const {token} = dataLogin;
+            const {token} = dataLogin[0];
             const user = dataLogin.data;
 
             if(!token || !user){
