@@ -4,7 +4,7 @@ import dotenv from'dotenv';
 import {envs} from './config/envs.config.js';
 import { dbConnect } from './config/db.config.js';
 import apiRouter from './routers/index.router.js';
-import { errorHandler } from './middlewares/errorHandler.js';
+import { errorHandler } from './middlewares/errorhandler.js';
 import cors from 'cors';
 
 
