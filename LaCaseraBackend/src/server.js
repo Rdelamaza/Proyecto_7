@@ -30,9 +30,9 @@ app.use ('/uploads', express.static('public/uploads'));
 app.use('/api/v1', apiRouter);
 
 // Ruta base para verificar que el backend funciona
-app.get('/', (req, res) => {
-    res.send('API funcionando correctamente ');
-});
+//app.get('/', (req, res) => {
+ //   res.send('API funcionando correctamente ');
+//});
 
 //Middleware de errores
 app.use(errorHandler);

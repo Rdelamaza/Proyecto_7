@@ -17,8 +17,10 @@ const productSchema = new Schema({
             },
             message: 'La URL de la imagen no es valida'
         }
+        
     },
     isActive: { type: Boolean, default: true },
+
 },
 {
     toJSON:{

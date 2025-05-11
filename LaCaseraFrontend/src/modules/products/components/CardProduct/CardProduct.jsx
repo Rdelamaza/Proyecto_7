@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, Button, Badge } from 'react-bootstrap';
+
+import { Card, Badge } from 'react-bootstrap';
 import { formatCurrency} from '../../../../shared/utils/formatCurrency';
 import {env} from '../../../../config/env.config';
 import './cardproduct.css';
