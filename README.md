@@ -18,7 +18,7 @@ Este proyecto es el desarrollo de una Aplicacion Full Stack de Comercio electron
         - Nodemon
         - Cors
 
-  Bae de datos
+  Base de datos
 
         - MongoDB (con Mongoose)
 
@@ -30,8 +30,14 @@ FRONTEND
         - Diseño responsive
         - Manejo estructurado de errores
 
-    2- Tecnologías utilizadas - React (con vite) - Uso de manejo de estado con useContext, useReducer, useEffect. - Manejo de ruteo con react-router-dom. - CSS (Bootstrap, CSS Modules) - Axios
+    2- Tecnologías utilizadas
 
-    DESPLIEGUE
+        - React (con vite)
+        - Uso de manejo de estado con useContext, useReducer, useEffect.
+        - Manejo de ruteo con react-router-dom.
+        - CSS (Bootstrap, CSS Modules)
+        - Axios
+
+DESPLIEGUE
 
     - Backend y Frontend mediante Render.com
