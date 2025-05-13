@@ -8,7 +8,8 @@ import{ Link } from 'react-router-dom';
 import "./navbar.css";
 import { AuthContext } from "../../../modules/auth/context/authContext";
 import useCartContext from "../../../modules/cart/context/CartContext";
-import { BsBag } from "react-icons/bs";
+import { BsBag, BsPersonPlus, BsPersonX } from "react-icons/bs";
+import { IconContext } from 'react-icons';
 
 
 export const NavBar =() => {
@@ -21,9 +22,19 @@ export const NavBar =() => {
     
     return (
         <>
-        <Navbar expand="lg" className="custom-navbar">
+        <Navbar sticky="top" expand="lg" className="custom-navbar">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/">La Casera</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+                    <img
+                    src="/image.png"
+                    alt="Logo La Casera"
+                    width="50"  
+                    height="50"
+                    className="me-3"
+                    style={{borderRadius:'50px'}}
+                />
+                La Casera
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -31,40 +42,42 @@ export const NavBar =() => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll>
 
-                    <NavDropdown title="Mesa y Cocina" id="navbarScrollingDropdown">
-                    <NavDropdown.Item as={Link} to="/menaje">Menaje</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="#action4">Manteleria</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item as={Link} to="#action5">
-                        Quincho
-                    </NavDropdown.Item>
+                    <NavDropdown title="Menaje" id="navbarScrollingDropdown">
+                        <NavDropdown.Item as={Link} to="/menaje">Juegos de vajilla</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4">Set de té</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4">Set de café</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4">Alcuzas</NavDropdown.Item>
                     </NavDropdown>
 
-                    <NavDropdown title="Hogar" id="navbarScrollingDropdown">
-                    <NavDropdown.Item as={Link} to="#action3">Baño</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="#action4">
-                        Dormitorio
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="#action5">
-                        Terraza
-                    </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="#action6">
-                        Entrada
-                    </NavDropdown.Item>
+                    <NavDropdown title="Textil" id="navbarScrollingDropdown">
+                        <NavDropdown.Item as={Link} to="#action3">
+                            Mantelería
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4">
+                            Cojines
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action5">
+                            Telas
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action6">
+                            Ropa de cama
+                        </NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Decoración" id="navbarScrollingDropdown">
-                    <NavDropdown.Item as={Link} to="#action3">Deco1</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="#action4">
-                        Deco2
-                    </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action3">
+                            Mesa
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4">
+                            
+                        </NavDropdown.Item>
 
-                    <NavDropdown.Item as={Link} to="#action5">
-                        Deco3
-                    </NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action5">
+                            Baño
+                        </NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
-                   { /*<Nav.Link as={Link} to="/about">About</Nav.Link>*/ }
+                    <Nav.Link as={Link} to="/about">Nosotras</Nav.Link>
 
                 </Nav>
 
@@ -84,18 +97,24 @@ export const NavBar =() => {
 
 
             <div>
-                {
-                    !user ? (
-                        <Nav.Link as={Link} to="/login">Inicia Sesión o Registrate</Nav.Link>
-                    ) : (
-                        <div className="navbar-user-info">
-                            <span>{user.first_name} {user.last_name} </span>
-                            <Nav.Link as={Link} to= "/" onClick={handleLogout}> Logout </Nav.Link>
-                        </div>
-                        
-
-                    )
-                }
+                    {
+                            !user ? (
+                            <Nav.Link as={Link} to="/login">
+                                <IconContext.Provider value={{ size: '1.5em' }}>
+                                <BsPersonPlus />
+                                </IconContext.Provider>
+                            </Nav.Link>
+                            ) : (
+                            <div className="navbar-user-info" style={{ display: 'flex', alignItems: 'center' }}>
+                                <span>{user.first_name} {user.last_name} </span>
+                                <Nav.Link as={Link} to="/" onClick={handleLogout}>
+                                    <IconContext.Provider value={{ size: '1.5em' }}>
+                                    <BsPersonX />
+                                    </IconContext.Provider>
+                                </Nav.Link>
+                            </div>
+                            )
+                        }
                 
             </div>
         </Container>

@@ -28,19 +28,19 @@ export const CardProduct = ({product}) => {
         <Card.Title className="fw-bold mb-3">{product.name}</Card.Title>
 
 
-      <Badge bg="success" className="mb-2 fs-6">
+      <Card.Text className="fw-bold mb-3">
         {formatCurrency (product.price, optionsCurrency) } 
-        </Badge>
+        </Card.Text>
 
 
-        <Card.Text className="text-muted small mb-3">
+        <Card.Text className="text-muted small mb-4">
           {product.description}
         </Card.Text>
 
 
         <div className="mt-auto d-flex justify-content-between align-items-center">
           <Badge bg={isAvailable ? 'success' : 'danger'}className="py-1 px-1 fs-10">
-            {isAvailable ? 'Disponible' : '✖ Agotado'}
+            {isAvailable ? ' ' : ' '}
           </Badge>
           
           <CartAddButton product={product} isAvailable={isAvailable} />

@@ -1,8 +1,8 @@
 .primaryColor {
     background-color: #E5D9B6; /* Color arena base */
     color: #333;
-    font-weight: 700; /* Texto en negrita (equivalente a "bold") */
-    width: 120px; /* Ancho personalizable */
+    font-weight: 500; /* Texto en negrita (equivalente a "bold") */
+    width: 160px; /* Ancho personalizable */
     height: 40px; /* Altura reducida */
     padding: 0; /* Elimina padding por defecto */
     aspect-ratio: 3/1; /* Relación ancho/alto (3 veces más ancho que alto) */

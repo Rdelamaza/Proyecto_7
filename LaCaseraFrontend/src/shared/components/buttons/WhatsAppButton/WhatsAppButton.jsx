@@ -26,7 +26,7 @@ return (
         rel="noopener noreferrer"
             aria-label="Chat por WhatsApp"
         >
-    <FaWhatsapp size={24} />
+    <FaWhatsapp size={50} />
     </Button>
     </OverlayTrigger>
     </div>
