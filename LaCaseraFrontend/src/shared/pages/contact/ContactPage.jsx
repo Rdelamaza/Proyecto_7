@@ -4,6 +4,8 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form } from "react-bootstrap";
 import {  EnvelopeFill, TelephoneFill } from 'react-bootstrap-icons';
+import {ContactForm} from  '../../components/ContactForm'
+
 
 export const Contacto = () => {
 
@@ -39,33 +41,8 @@ export const Contacto = () => {
                         <Card.Body>
                             <Card.Title className="text-center mb-4">¡Estamos para responder todas tus dudas!</Card.Title>
                             
-                            <Form>
-                                <Form.Group className="mb-3" controlId="formName">
-                                    <Form.Label>Nombre</Form.Label>
-                                    <Form.Control type="text" placeholder="Ingresa tu nombre" />
-                                </Form.Group>
+                            <ContactForm/>
 
-                                <Form.Group className="mb-3" controlId="formEmail">
-                                    <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" placeholder="ejemplo@email.com" required />
-                                </Form.Group>
-
-                                <Form.Group className="mb-3" controlId="formPhone">
-                                    <Form.Label>Teléfono (opcional)</Form.Label>
-                                    <Form.Control type="tel" placeholder="+56 9 1234 5678" />
-                                </Form.Group>
-
-                                <Form.Group className="mb-3" controlId="formMessage">
-                                    <Form.Label>¿En qué te podemos ayudar?</Form.Label>
-                                    <Form.Control as="textarea" rows={3} placeholder="Escribe tu mensaje aquí..." />
-                                </Form.Group>
-
-                                <div className="btn-arena-container">
-                                    <Button type="submit" className="btn-arena fw-bold">
-                                    ENVIAR
-                                    </Button>
-                                </div>
-                            </Form>
                         </Card.Body>
                     </Card>
 
@@ -75,20 +52,30 @@ export const Contacto = () => {
                             Contacto
                             </Card.Title>
                             
-                            <div className="d-flex flex-column gap-3"> {/* Espaciado entre elementos */}
-                            <div className="d-flex align-items-center gap-2">
-                                <TelephoneFill className="text-primary" size={20} /> {/* Ícono teléfono */}
-                                <span>
-                                <strong>Teléfono:</strong> +56 9 8765 4321
-                                </span>
-                            </div>
-                            
-                            <div className="d-flex align-items-center gap-2">
-                                <EnvelopeFill className="text-primary" size={20} /> {/* Ícono correo */}
-                                <span>
-                                <strong>Correo:</strong> lacasera@gmail.com
-                                </span>
-                            </div>
+                                <div className="d-flex flex-column gap-3"> {/* Espaciado entre elementos */}
+                                    <div>
+                                        <TelephoneFill className="text-primary" size={20} /> {/* Ícono teléfono */}
+                                        <span>
+                                        <strong>Teléfono:</strong> +56 9 8765 4321
+                                        </span>
+                                    </div>
+                                
+                                <div>
+                                    <EnvelopeFill className="text-primary" size={20} /> {/* Ícono correo */}
+                                    <span>
+                                        <strong>Correo:</strong> lacasera@gmail.com
+                                    </span>
+                                </div>
+                            <Card.Title as="h3" className="mb-4 mt-4"> {/* Título más grande */}
+                            Horarios
+                            </Card.Title>
+                            <span>
+                                <strong>Miércoles/Jueves</strong> 11:30 a 18:30 hrs
+                            </span>
+                            <span>
+                                <strong>Viernes a Domingo</strong> 10:30 a 20:30 hrs
+                            </span>
+
                             </div>
                         </Card.Body>
 

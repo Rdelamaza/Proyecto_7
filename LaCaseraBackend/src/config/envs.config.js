@@ -14,4 +14,10 @@ export const envs ={
         jwtExpire: process.env.JWT_EXPIRE,
     },
     mercadoPagoToken: process.env.MERCADOPAGO_ACCES_TOKEN,
+    email: {
+        service: process.env.EMAIL_SERVICE,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+        destination:process.env.EMAIL_DESTINATION
+    }
 };
