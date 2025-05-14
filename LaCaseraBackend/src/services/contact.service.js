@@ -3,7 +3,6 @@ import { envs } from '../config/envs.config.js';
 
 const {service,user,pass,destination} = envs.email;
 
-// Configuración del transportador de Nodemailer
 export const transporter = nodemailer.createTransport({
     service: service,
     auth: {
@@ -14,7 +13,7 @@ export const transporter = nodemailer.createTransport({
 
 
 
-export const sendContactEmailService = async (nombre, email, telefono, mensaje) => {
+export const sendContactEmailService = async (name, email, phone_number, message) => {
     try {
         const mailOptions = {
             from: user, // Tu dirección de correo remitente
@@ -22,10 +21,10 @@ export const sendContactEmailService = async (nombre, email, telefono, mensaje) 
             subject: 'Nuevo mensaje de contacto desde la web',
             html: `
                 <h3>Nuevo mensaje de contacto:</h3>
-                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Nombre:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Teléfono:</strong> ${telefono || 'No proporcionado'}</p>
-                <p><strong>Mensaje:</strong> ${mensaje}</p>
+                <p><strong>Teléfono:</strong> ${phone_number || 'No proporcionado'}</p>
+                <p><strong>Mensaje:</strong> ${message}</p>
             `,
         };
 
