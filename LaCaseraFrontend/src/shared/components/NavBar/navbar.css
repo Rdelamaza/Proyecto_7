@@ -118,4 +118,68 @@ transform: scale(1.05);
     height: 16px;
     font-size: 0.6rem;
     }
+
+    .navbar-toggler {
+
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+
+@media (max-width: 991.98px) { 
+    .navbar > .container-fluid {
+        display: flex; 
+        align-items: center; 
+    }
+
+    .navbar-brand {
+        margin-right: auto; 
+    }
+
+
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        z-index: 1000;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem; 
+
+    .cart-icon-container {
+        margin-left: 0.5rem; 
+    }
+
+
+    .navbar-user-info,
+    .navbar > .container-fluid > div > a { 
+        margin-left: 0.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .navbar > .container-fluid {
+        justify-content: space-between; 
+
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .navbar-actions > * { 
+        margin-left: 1rem;
+    }
+}
+}
 }

@@ -28,8 +28,6 @@ export const NavBar =() => {
 
     };
 
-
-    
     return (
         <>
         <Navbar sticky="top" expand="lg" className="custom-navbar" expanded={expanded} onToggle={setExpanded} >
@@ -92,8 +90,9 @@ export const NavBar =() => {
 
             <Form className="d-flex"></Form>
             </Navbar.Collapse>
+
+
             <div className="d-flex align-items-center"/>
-            
             <Link to="/cart" className="cart-icon-container" aria-label="Bolsa de compras">
                 <BsBag className="cart-icon" />
                     {totalItems > 0 && (
