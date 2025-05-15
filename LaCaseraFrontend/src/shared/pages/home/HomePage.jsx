@@ -17,6 +17,10 @@ export const Home =()=> {
         <ImageCarousel/>
         </section>
 
+        <section>
+            ¿Productos?
+        </section>
+
 </>
     )}  ;
 
