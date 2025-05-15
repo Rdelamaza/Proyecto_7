@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -15,14 +15,24 @@ import { IconContext } from 'react-icons';
 export const NavBar =() => {
     const {user, logout}= useContext(AuthContext);
     const {totalItems} = useCartContext();
+    const [expanded, setExpanded] = useState(false);
+
 
     const handleLogout = ()=> {
+        setExpanded(false);
         logout();
     };
+
+    const handleNavSelect = (eventKey) => {
+        setExpanded(false);
+
+    };
+
+
     
     return (
         <>
-        <Navbar sticky="top" expand="lg" className="custom-navbar">
+        <Navbar sticky="top" expand="lg" className="custom-navbar" expanded={expanded} onToggle={setExpanded} >
             <Container fluid>
                 <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
                     <img
@@ -37,46 +47,46 @@ export const NavBar =() => {
                 </Navbar.Brand>
                 <Navbar.Toggle/>
                 <Navbar.Collapse >
-                <Nav
-                    className="mx-auto my-1 my-lg-0"
-                    navbarScroll>
+                <Nav className="mx-auto my-1 my-lg-0"
+                navbarScroll
+                onSelect={handleNavSelect}>
 
                     <NavDropdown title="Menaje" id="navbarScrollingDropdown">
-                        <NavDropdown.Item as={Link} to="/menaje">Juegos de vajilla</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action4">Set de té</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action4">Set de café</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action4">Alcuzas</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/menaje"eventKey="/menaje">Juegos de vajilla</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4"eventKey="set-te">Set de té</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4"eventKey="set-cafe">Set de café</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="#action4"eventKey="alcuzas">Alcuzas</NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Textil" id="navbarScrollingDropdown">
-                        <NavDropdown.Item as={Link} to="#action3">
+                        <NavDropdown.Item as={Link} to="#action3" eventKey={"manteleria"}>
                             Mantelería
                         </NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action4">
+                        <NavDropdown.Item as={Link} to="#action4" eventKey={"cojines"}>
                             Cojines
                         </NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action5">
+                        <NavDropdown.Item as={Link} to="#action5" eventKey={"telas"}>
                             Telas
                         </NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action6">
+                        <NavDropdown.Item as={Link} to="#action6" eventKey={"ropa-cama"}>
                             Ropa de cama
                         </NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="Decoración" id="navbarScrollingDropdown">
-                        <NavDropdown.Item as={Link} to="#action3">
+                        <NavDropdown.Item as={Link} to="#action3" eventKey={"mesa"}>
                             Mesa
                         </NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to="#action4">
+                        <NavDropdown.Item as={Link} to="#action4" eventKey={""}>
                             
                         </NavDropdown.Item>
 
-                        <NavDropdown.Item as={Link} to="#action5">
+                        <NavDropdown.Item as={Link} to="#action5" eventKey={"bano"}>
                             Baño
                         </NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
-                    <Nav.Link as={Link} to="/about">Nosotras</Nav.Link>
+                    <Nav.Link as={Link} to="/contact" eventKey={"/contact"}>Contacto</Nav.Link>
+                    <Nav.Link as={Link} to="/about" eventKey={"/about"}>Nosotras</Nav.Link>
 
                 </Nav>
 
@@ -95,33 +105,29 @@ export const NavBar =() => {
 
 
 
-            <div>
-                    {
-                            !user ? (
-                            <Nav.Link as={Link} to="/login">
-                                <IconContext.Provider value={{ size: '1.5em' }}>
-                                <BsPersonPlus />
-                                </IconContext.Provider>
-                            </Nav.Link>
-                            ) : (
-                            <div className="navbar-user-info" style={{ display: 'flex', alignItems: 'center' }}>
-                                <span>{user.first_name} {user.last_name} </span>
-                                <Nav.Link as={Link} to="/" onClick={handleLogout}>
+                <div>
+                        {
+                                !user ? (
+                                <Nav.Link as={Link} to="/login">
                                     <IconContext.Provider value={{ size: '1.5em' }}>
-                                    <BsPersonX />
+                                    <BsPersonPlus />
                                     </IconContext.Provider>
                                 </Nav.Link>
-                            </div>
-                            )
-                        }
-                
-            </div>
-        </Container>
+                                ) : (
+                                <div className="navbar-user-info" style={{ display: 'flex', alignItems: 'center' }}>
+                                    <span>{user.first_name} {user.last_name} </span>
+                                    <Nav.Link as={Link} to="/" onClick={handleLogout}>
+                                        <IconContext.Provider value={{ size: '1.5em' }}>
+                                        <BsPersonX />
+                                        </IconContext.Provider>
+                                    </Nav.Link>
+                                </div>
+                                )
+                            }
+                </div>
+            </Container>
         </Navbar>
-
-
-
-            </>    
+    </>    
     );
     }
     
