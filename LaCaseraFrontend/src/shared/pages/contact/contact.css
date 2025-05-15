@@ -37,4 +37,9 @@
 .rounded-bottom .card-footer {
     border-bottom-left-radius: 50px!important;
     border-bottom-right-radius: 50px!important;
+    margin: 10px;
+}
+
+p {
+    margin-bottom: 0 !important;
 }
