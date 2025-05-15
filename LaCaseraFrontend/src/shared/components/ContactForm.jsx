@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from 'react-bootstrap';
-import { sendContactFormData } from "../../shared/services/fetchcontact"; // Importa el nuevo servicio
+import { sendContactFormData } from "../../shared/services/fetchcontact";
 
 export const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ export const ContactForm = () => {
         setSubmissionStatus('enviando');
 
         try {
-            const responseData = await sendContactFormData(formData); // Llama al servicio
+            const responseData = await sendContactFormData(formData); 
             setSubmissionStatus('exito');
             console.log('Mensaje enviado:', responseData);
             setFormData({ name: '', email: '', phone_number: '', message: '' });
@@ -35,6 +35,7 @@ export const ContactForm = () => {
         }
     };
     return (
+    <> 
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formName">
                 <Form.Label>Nombre</Form.Label>
@@ -87,10 +88,21 @@ export const ContactForm = () => {
                 {submissionStatus === 'enviando' ? 'Enviando...' : 'ENVIAR'}
         </Button>
             </div>
-
         </Form>
-);
+        {submissionStatus === 'exito' && (
+                <div className="mt-2 alert alert-success">
+                    ¡Tu mensaje ha sido enviado con exito! Nos pondremos en contacto contigo pronto.
+                </div>
+            )}
 
+            {submissionStatus === 'error' && (
+                <div className="mt-3 alert alert-danger">
+                    Ha ocurrido un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.
+                </div>
+            )}
+    </>
+        
+    );
 }
 
 export default ContactForm
