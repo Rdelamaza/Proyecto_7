@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -33,13 +33,12 @@ export const NavBar =() => {
                     className="me-3"
                     style={{borderRadius:'50px'}}
                 />
-                La Casera
+                <span className="d-none d-sm-inline">La Casera</span>
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
+                <Navbar.Toggle/>
+                <Navbar.Collapse >
                 <Nav
-                    className="mx-auto my-2 my-lg-0"
-                    style={{ maxHeight: '100px' }}
+                    className="mx-auto my-1 my-lg-0"
                     navbarScroll>
 
                     <NavDropdown title="Menaje" id="navbarScrollingDropdown">
