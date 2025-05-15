@@ -30,9 +30,9 @@ export const Contacto = () => {
                                 </div>
                             </div>
                         </Card.Body>
-                        <Card.Footer>
-                            <div className="card-footer">
-                                <p className="text-muted">Av. del Mar 1045, Maitencillo</p>
+                        <Card.Footer className="rounded-bottom">
+                            <div>
+                                <p>Av. del Mar 1045, Maitencillo.</p>
                             </div>
                         </Card.Footer>
                     </Card>

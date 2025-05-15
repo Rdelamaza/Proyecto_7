@@ -2,14 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 0px;
     margin-bottom: 50px;
 }
 
 .btn-arena {
     background-color: #E5D9B6!important;
     border-color: #E5D9B6 !important;
-    color: #333!important; /* Texto oscuro para contraste */
+    color: #333!important;
     font-weight: bold;
     padding: 8px 24px;
     width: 100%; 
@@ -23,6 +23,18 @@
 
 .btn-arena:active, 
 .btn-arena:focus {
-  background-color: #E5D9B6 !important; /* Mantiene el color al presionar */
-  box-shadow: none !important; /* Elimina el sombreado azul de Bootstrap */
+    background-color: #E5D9B6 !important; 
+    box-shadow: none !important; 
+}
+
+.card-footer {
+    background-color: #E5D9B6 !important; 
+    font-weight: 700;
+    border-radius: 30%;
+}
+
+
+.rounded-bottom .card-footer {
+    border-bottom-left-radius: 50px!important;
+    border-bottom-right-radius: 50px!important;
 }
